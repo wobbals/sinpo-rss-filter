@@ -4,21 +4,18 @@ const request = require('request-promise-native');
 const config = require('config');
 const xmljs = require('xml-js');
 const rootRSSURL = config.get('rss_url');
-const crypto = require('crypto');
-const readline = require('readline');
 const debug = require('debug')('index');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
 
 
 let filters = [
-  { key: /Shit/g, replacement: 'Sh*t' }
-  /* add more filters or move this to a config file */
+  { key: /Shit/g, replacement: 'Sh*t' },
+  { key: /shit/g, replacement: 'sh*t' },
+  { key: /Fuck/g, replacement: 'F***' },
+  { key: /fuck/g, replacement: 'f***' }
+    /* add more filters or move this to a config file */
 ]
 
+/* Attribute names that qualify for profanity filtering */
 let filteredAttributes = [
   'title'
 ]
