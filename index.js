@@ -1,15 +1,15 @@
 'use strict'
 
-const request = require('request-promise-native');
 const config = require('config');
+const request = require('request-promise-native');
 const xmljs = require('xml-js');
 const rootRSSURL = config.get('rss_url');
 const debug = require('debug')('index');
 
 
 let filters = [
-  { key: /Shit/g, replacement: 'Sh*t' },
-  { key: /shit/g, replacement: 'sh*t' },
+  { key: /Shit/g, replacement: 'S**t' },
+  { key: /shit/g, replacement: 's**t' },
   { key: /Fuck/g, replacement: 'F***' },
   { key: /fuck/g, replacement: 'f***' }
     /* add more filters or move this to a config file */
